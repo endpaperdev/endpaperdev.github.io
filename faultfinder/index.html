@@ -66,7 +66,15 @@ video{width:100%;border:1px solid var(--rule);background:#000;margin-bottom:6px}
 .dl{font-size:.84rem;color:var(--graphite)}
 footer{text-align:center;padding:28px 20px;color:var(--graphite);font-size:.84rem;
   border-top:3px solid var(--brass);background:var(--paper)}
+
+.newsletter{border:1px solid var(--line,#33405a);border-radius:4px;padding:22px 24px;margin:44px 0 0;max-width:720px}
+.bd-form{display:flex;gap:10px;flex-wrap:wrap}
+.bd-form input[type=email]{flex:1;min-width:220px;padding:10px 12px;border:1px solid var(--line,#33405a);border-radius:3px;background:rgba(0,0,0,.35);color:inherit;font:inherit}
+.bd-form button{padding:10px 20px;border:1px solid var(--gold,#dab96b);border-radius:3px;background:transparent;color:var(--gold,#dab96b);font:inherit;font-weight:600;cursor:pointer}
+.bd-form button:hover{background:var(--gold,#dab96b);color:#111}
+.bd-note{font-size:.8rem;opacity:.65;margin-top:10px}
 </style>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "1961a987d06a4c468e8c8a738ab53b34"}'></script>
 </head>
 <body>
 <a href="../" style="position:absolute;top:14px;left:18px;font-family:'Cormorant Garamond',Garamond,serif;font-weight:300;letter-spacing:.18em;font-size:15px;color:#C4B59A;text-decoration:none;opacity:.8;z-index:5">ENDPAPER</a>
@@ -184,13 +192,33 @@ footer{text-align:center;padding:28px 20px;color:var(--graphite);font-size:.84re
   <h2>About Endpaper</h2>
   <p>Endpaper is a one-person studio in Somerset, UK. Faultfinder comes out of twenty-six years that began writing C for the network processors in backbone routers, where most of the work was reading a listing and watching registers until you found the one instruction that was not doing what everybody believed it was doing. Nobody had made the detective game about that job, so this is it.</p>
   <p>The studio's first release, <a href="https://store.steampowered.com/app/4693700/The_Infinite_Library/">The Infinite Library</a>, launches on 10 November 2026. Both games are built in Godot and developed in the open, with playtests run publicly since September 2026.</p>
+
+<section class="newsletter" id="newsletter" style="margin:44px 0 0">
+  <h2 style="margin-top:0">Hear when something launches</h2>
+  <p style="margin-bottom:10px">An email when a game ships or a demo lands. That's the only thing it says. No weekly updates, unsubscribe in one click.</p>
+  <form action="https://buttondown.com/api/emails/embed-subscribe/endpaper" method="post" class="bd-form">
+    <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address">
+    <input type="hidden" name="tag" value="press-kit-faultfinder">
+    <input type="hidden" name="metadata__source_page" value="press-kit-faultfinder">
+    <input type="hidden" name="metadata__utm" value="" class="bd-utm">
+    <input type="hidden" name="metadata__referrer" value="" class="bd-ref">
+    <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+    <button type="submit">Subscribe</button>
+  </form>
+  <p class="bd-note">Double opt-in, handled by Buttondown. Your address is used for launch emails only.</p>
+</section>
+<script>
+(function(){var q=location.search.slice(1);var u=q.split("&").filter(function(p){return p.indexOf("utm_")===0}).join("&");
+document.querySelectorAll(".bd-utm").forEach(function(e){e.value=u});
+document.querySelectorAll(".bd-ref").forEach(function(e){e.value=document.referrer||""});})();
+</script>
 </main>
 
 </div>
 
 <footer>
   &copy; 2026 Endpaper &middot; Press kit &middot; Everything on this page may be used freely for coverage of the game.
-</footer>
+ Cookie-free analytics by Cloudflare. Newsletter by Buttondown.</footer>
 
 </body>
 </html>

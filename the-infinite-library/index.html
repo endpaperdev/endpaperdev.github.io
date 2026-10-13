@@ -39,7 +39,15 @@ video{width:100%;border:1px solid #33405a;border-radius:3px;margin-bottom:6px;ba
 .stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--gold)}
 footer{text-align:center;padding:26px;color:#68758c;font-size:.85rem;border-top:1px solid #232e44}
 .dl{font-size:.85rem;color:#8fa0b8}
+
+.newsletter{border:1px solid var(--line,#33405a);border-radius:4px;padding:22px 24px;margin:44px 0 0;max-width:720px}
+.bd-form{display:flex;gap:10px;flex-wrap:wrap}
+.bd-form input[type=email]{flex:1;min-width:220px;padding:10px 12px;border:1px solid var(--line,#33405a);border-radius:3px;background:rgba(0,0,0,.35);color:inherit;font:inherit}
+.bd-form button{padding:10px 20px;border:1px solid var(--gold,#dab96b);border-radius:3px;background:transparent;color:var(--gold,#dab96b);font:inherit;font-weight:600;cursor:pointer}
+.bd-form button:hover{background:var(--gold,#dab96b);color:#111}
+.bd-note{font-size:.8rem;opacity:.65;margin-top:10px}
 </style>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "1961a987d06a4c468e8c8a738ab53b34"}'></script>
 </head>
 <body>
 <a href="../" style="position:absolute;top:14px;left:18px;font-family:'Cormorant Garamond',Garamond,serif;font-weight:300;letter-spacing:.18em;font-size:15px;color:#C4B59A;text-decoration:none;opacity:.8;z-index:5">ENDPAPER</a>
@@ -159,11 +167,31 @@ footer{text-align:center;padding:26px;color:#68758c;font-size:.85rem;border-top:
 
   <h2>About Endpaper</h2>
   <p>Endpaper is a solo studio in Somerset, UK. The Infinite Library is its first title, and an attempt to answer a simple question: what if the prestige loop, the most mechanical convention in incremental games, was the story? In development since 2025, built in Godot 4.7, and tuned in public through a browser demo and the r/incremental_games community since May 2026. Key art and store capsules illustrated by Komarca Art.</p>
+
+<section class="newsletter" id="newsletter" style="margin:44px 0 0">
+  <h2 style="margin-top:0">Hear when something launches</h2>
+  <p style="margin-bottom:10px">An email when a game ships or a demo lands. That's the only thing it says. No weekly updates, unsubscribe in one click.</p>
+  <form action="https://buttondown.com/api/emails/embed-subscribe/endpaper" method="post" class="bd-form">
+    <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address">
+    <input type="hidden" name="tag" value="press-kit-infinite-library">
+    <input type="hidden" name="metadata__source_page" value="press-kit-infinite-library">
+    <input type="hidden" name="metadata__utm" value="" class="bd-utm">
+    <input type="hidden" name="metadata__referrer" value="" class="bd-ref">
+    <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+    <button type="submit">Subscribe</button>
+  </form>
+  <p class="bd-note">Double opt-in, handled by Buttondown. Your address is used for launch emails only.</p>
+</section>
+<script>
+(function(){var q=location.search.slice(1);var u=q.split("&").filter(function(p){return p.indexOf("utm_")===0}).join("&");
+document.querySelectorAll(".bd-utm").forEach(function(e){e.value=u});
+document.querySelectorAll(".bd-ref").forEach(function(e){e.value=document.referrer||""});})();
+</script>
 </main>
 
 </div>
 
-<footer>The Infinite Library © 2026 Endpaper · Press kit. All assets on this page may be used for coverage of the game.</footer>
+<footer>The Infinite Library © 2026 Endpaper · Press kit. All assets on this page may be used for coverage of the game. Cookie-free analytics by Cloudflare. Newsletter by Buttondown.</footer>
 
 </body>
 </html>

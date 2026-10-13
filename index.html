@@ -58,7 +58,15 @@ dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 22px;max-width:640
 dt{color:var(--parch);font-weight:600}
 footer{position:relative;z-index:1;text-align:center;padding:26px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
 footer .rules{width:120px;height:1px;background:var(--rule);margin:0 auto 14px;opacity:.6}
+
+.newsletter{border:1px solid var(--line,#33405a);border-radius:4px;padding:22px 24px;margin:44px 0 0;max-width:720px}
+.bd-form{display:flex;gap:10px;flex-wrap:wrap}
+.bd-form input[type=email]{flex:1;min-width:220px;padding:10px 12px;border:1px solid var(--line,#33405a);border-radius:3px;background:rgba(0,0,0,.35);color:inherit;font:inherit}
+.bd-form button{padding:10px 20px;border:1px solid var(--gold,#dab96b);border-radius:3px;background:transparent;color:var(--gold,#dab96b);font:inherit;font-weight:600;cursor:pointer}
+.bd-form button:hover{background:var(--gold,#dab96b);color:#111}
+.bd-note{font-size:.8rem;opacity:.65;margin-top:10px}
 </style>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "1961a987d06a4c468e8c8a738ab53b34"}'></script>
 </head>
 <body>
 
@@ -139,9 +147,29 @@ footer .rules{width:120px;height:1px;background:var(--rule);margin:0 auto 14px;o
 <h2>About</h2>
 <p style="max-width:720px">Endpaper is one person, working from Somerset in the South West of England, building the kind of games I always wanted to find: ones that end, ones that mean something, ones where the systems are the story. Everything is built in Godot. Key art for The Infinite Library was painted by Komarca Art; some in-game artwork and music are made with generative AI tools, and each store page says so.</p>
 
+<section class="newsletter" id="newsletter" style="margin:44px auto 0">
+  <h2 style="margin-top:0">Hear when something launches</h2>
+  <p style="margin-bottom:10px">An email when a game ships or a demo lands. That's the only thing it says. No weekly updates, unsubscribe in one click.</p>
+  <form action="https://buttondown.com/api/emails/embed-subscribe/endpaper" method="post" class="bd-form">
+    <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address">
+    <input type="hidden" name="tag" value="studio">
+    <input type="hidden" name="metadata__source_page" value="studio">
+    <input type="hidden" name="metadata__utm" value="" class="bd-utm">
+    <input type="hidden" name="metadata__referrer" value="" class="bd-ref">
+    <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+    <button type="submit">Subscribe</button>
+  </form>
+  <p class="bd-note">Double opt-in, handled by Buttondown. Your address is used for launch emails only.</p>
+</section>
+<script>
+(function(){var q=location.search.slice(1);var u=q.split("&").filter(function(p){return p.indexOf("utm_")===0}).join("&");
+document.querySelectorAll(".bd-utm").forEach(function(e){e.value=u});
+document.querySelectorAll(".bd-ref").forEach(function(e){e.value=document.referrer||""});})();
+</script>
+
 </div>
 
-<footer><div class="rules"></div>© 2026 Endpaper · All assets on this site may be used for coverage of the games.</footer>
+<footer><div class="rules"></div>© 2026 Endpaper · All assets on this site may be used for coverage of the games. Cookie-free analytics by Cloudflare. Newsletter by Buttondown.</footer>
 
 <script>
 /* Endpaper splash: procedural blued-steel marble with rust veins, from the studio splash screen. */
