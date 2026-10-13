@@ -24,8 +24,9 @@ a{color:var(--teal)}
 a:hover{color:var(--ink)}
 h1,h2,h3{font-family:'Libre Baskerville',Georgia,serif;color:var(--ink);font-weight:700;letter-spacing:.01em}
 
-header{padding:54px 20px 26px;text-align:center;background:var(--paper);border-bottom:3px solid var(--brass)}
-header h1{font-size:clamp(2.6rem,9vw,5rem);letter-spacing:.04em;line-height:1}
+header{padding:34px 20px 26px;text-align:center;background:var(--paper);border-bottom:3px solid var(--brass)}
+header .hero img{display:block;margin:0 auto;max-width:920px;width:100%;border:2px solid var(--brass)}
+header h1.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 header p.tag{font-family:'Libre Baskerville',Georgia,serif;font-style:italic;font-size:1.35rem;color:var(--graphite);margin-top:12px}
 header p.fest{font-size:.9rem;color:var(--brass);margin-top:14px;letter-spacing:.18em;text-transform:uppercase}
 
@@ -68,9 +69,11 @@ footer{text-align:center;padding:28px 20px;color:var(--graphite);font-size:.84re
 </style>
 </head>
 <body>
+<a href="../" style="position:absolute;top:14px;left:18px;font-family:'Cormorant Garamond',Garamond,serif;font-weight:300;letter-spacing:.18em;font-size:15px;color:#C4B59A;text-decoration:none;opacity:.8;z-index:5">ENDPAPER</a>
 
 <header>
-  <h1>FAULTFINDER</h1>
+  <div class="hero"><img src="images/capsule-header.png" alt="Faultfinder"></div>
+  <h1 class="sr">Faultfinder</h1>
   <p class="tag">The crime scene is a program.</p>
   <p class="fest">Steam Next Fest &middot; 19 to 26 October 2026</p>
 </header>
@@ -81,7 +84,7 @@ footer{text-align:center;padding:28px 20px;color:var(--graphite);font-size:.84re
   <h2>Factsheet</h2>
   <dl>
     <dt>Developer</dt><dd>Endpaper, a solo studio in Somerset, UK</dd>
-    <dt>Release date</dt><dd>Q4 2026</dd>
+    <dt>Release date</dt><dd>24 November 2026</dd>
     <dt>Platforms</dt><dd>Steam (Windows) &middot; free browser demo on itch.io</dd>
     <dt>Price</dt><dd>$12.99 USD &middot; &pound;10.99 GBP</dd>
     <dt>Genre</dt><dd>Deduction / programming puzzle</dd>
@@ -160,6 +163,7 @@ footer{text-align:center;padding:28px 20px;color:var(--graphite);font-size:.84re
   <div class="grid">
     <figure><a href="images/capsule-main.png"><img src="images/capsule-main.png" alt="Main capsule"></a><figcaption>Main capsule</figcaption></figure>
     <figure><a href="images/capsule-header.png"><img src="images/capsule-header.png" alt="Header capsule"></a><figcaption>Header capsule</figcaption></figure>
+    <figure><a href="images/capsule-vertical.png"><img src="images/capsule-vertical.png" alt="Vertical capsule"></a><figcaption>Vertical capsule</figcaption></figure>
     <figure class="ondark"><a href="images/logo.png"><img src="images/logo.png" alt="Faultfinder logo, transparent PNG"></a><figcaption>Logo, transparent PNG. Shown on dark because it is drawn for Steam's library background.</figcaption></figure>
     <figure><a href="images/event-header.png"><img src="images/event-header.png" alt="Next Fest event header"></a><figcaption>Next Fest event header, 1920&times;622</figcaption></figure>
   </div>

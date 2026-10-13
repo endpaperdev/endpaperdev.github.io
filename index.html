@@ -10,49 +10,77 @@
 <meta property="og:image" content="https://endpaperdev.github.io/assets/infinite-library-920x430.png">
 <link rel="icon" href="assets/endpaper-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0e0907;--ink2:#1a1410;--rule:#3a2f24;--gold:#dab96b;--parch:#e8d9b7;--body:#cfc4b2;--muted:#8f8373}
+:root{--ink:#0C0B0A;--ink2:#15131110;--card:#151311;--rule:#8B7D6B;--line:#2a2622;--wordmark:#C4B59A;--gold:#dab96b;--parch:#e8d9b7;--body:#c9bfae;--muted:#8a8072}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--ink);color:var(--body);font-family:'Source Sans 3',sans-serif;line-height:1.6}
+html{background:var(--ink)}
+body{background:var(--ink);color:var(--body);font-family:'Source Sans 3',sans-serif;line-height:1.6;position:relative;min-height:100vh}
 a{color:var(--gold)}
 h1,h2,h3{font-family:'Cormorant Garamond',serif;color:var(--gold);font-weight:600}
-header{padding:64px 20px 36px;text-align:center;background:radial-gradient(ellipse at top,#241a12 0%,var(--ink) 65%)}
-header img{width:96px;height:96px;border:1px solid var(--rule)}
-header h1{font-size:3rem;letter-spacing:.28em;text-transform:uppercase;margin-top:18px;font-weight:500}
-header p.tag{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--parch);font-style:italic;margin-top:8px}
-.wrap{max-width:1040px;margin:0 auto;padding:12px 20px 80px}
+
+/* marble wash behind everything */
+#bg-marble{position:fixed;inset:0;width:100%;height:100%;opacity:0;transition:opacity 2.5s ease;pointer-events:none;z-index:0;image-rendering:auto}
+#bg-marble.on{opacity:.06}
+@media(prefers-reduced-motion:reduce){#bg-marble{transition:none}}
+
+/* splash header */
+#splash{position:relative;height:300px;overflow:hidden;z-index:1}
+.rule-line{height:1px;background:var(--rule);position:absolute;left:50%;transform:translateX(-50%);width:0;opacity:0}
+#rule-top{top:calc(50% - 46px)}
+#rule-bottom{top:calc(50% + 46px)}
+.rule-line.on{width:min(420px,80vw);opacity:1;transition:width 1.2s cubic-bezier(.25,0,.15,1),opacity .6s ease}
+#logo-row{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(6px)}
+#logo-row.on{opacity:1;transform:translateY(0);transition:opacity 1s ease,transform 1s cubic-bezier(.25,0,.15,1)}
+.letter{font-family:'Cormorant Garamond',Garamond,'Times New Roman',serif;font-size:clamp(40px,8vw,64px);font-weight:300;color:var(--wordmark);line-height:1;letter-spacing:.18em}
+.letter-marble{color:transparent;-webkit-text-stroke:.4px var(--wordmark);background-size:cover;background-position:center;-webkit-background-clip:text;background-clip:text}
+.letter-marble.on{-webkit-text-stroke:0 transparent;transition:-webkit-text-stroke .3s ease}
+#tag{position:absolute;left:0;right:0;top:calc(50% + 64px);text-align:center;font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;color:var(--wordmark);opacity:0;transition:opacity 1.2s ease}
+#tag.on{opacity:.85}
+#splash a.skip{position:absolute;inset:0;display:block}
+
+.wrap{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:12px 20px 80px;opacity:0;transition:opacity 1.2s ease}
+.wrap.on{opacity:1}
 .intro{max-width:720px;margin:0 auto 44px;text-align:center;font-size:1.05rem}
-h2{font-size:1.6rem;border-bottom:1px solid var(--rule);padding-bottom:8px;margin:40px 0 18px}
+h2{font-size:1.6rem;border-bottom:1px solid var(--line);padding-bottom:8px;margin:40px 0 18px;font-weight:500;letter-spacing:.04em}
 .games{display:grid;grid-template-columns:repeat(auto-fill,minmax(440px,1fr));gap:28px}
 @media(max-width:520px){.games{grid-template-columns:1fr}}
-.game{background:var(--ink2);border:1px solid var(--rule);border-radius:4px;overflow:hidden}
+.game{background:var(--card);border:1px solid var(--line);border-radius:3px;overflow:hidden}
 .game img{width:100%;display:block;aspect-ratio:920/430;object-fit:cover}
 .game .body{padding:16px 18px 18px}
-.game h3{font-size:1.5rem;margin-bottom:4px}
-.game .status{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.game h3{font-size:1.5rem;margin-bottom:4px;font-weight:600}
+.game .status{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
 .game .status b{color:var(--gold);font-weight:600}
 .game p{margin-bottom:10px}
 .game .links a{margin-right:14px;font-weight:600}
 .game .links span{color:var(--muted)}
 dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 22px;max-width:640px}
 dt{color:var(--parch);font-weight:600}
-footer{text-align:center;padding:26px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--rule)}
+footer{position:relative;z-index:1;text-align:center;padding:26px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+footer .rules{width:120px;height:1px;background:var(--rule);margin:0 auto 14px;opacity:.6}
 </style>
 </head>
 <body>
 
-<header>
-  <img src="assets/endpaper-mark.png" alt="Endpaper">
-  <h1>Endpaper</h1>
-  <p class="tag">Small, strange, finished games. One person, Somerset, UK.</p>
+<canvas id="bg-marble" aria-hidden="true"></canvas>
+
+<header id="splash" aria-label="Endpaper">
+  <div id="rule-top" class="rule-line"></div>
+  <div id="rule-bottom" class="rule-line"></div>
+  <div id="logo-row">
+    <span class="letter letter-marble" id="letter-E">E</span>
+    <span class="letter" id="mid">NDPAPE</span>
+    <span class="letter letter-marble" id="letter-R">R</span>
+  </div>
+  <p id="tag">Small, strange, finished games. One person, Somerset, UK.</p>
+  <a class="skip" href="#games" aria-label="Skip intro" onclick="skipSplash()"></a>
 </header>
 
-<div class="wrap">
+<div class="wrap" id="content">
 
 <p class="intro">Endpaper is a one-person studio making small games that are built to end. No live service, no microtransactions, nothing that needs you back every day. You play them, they end, you keep the shelf. Each game below has a press kit with trailers, screenshots, key art and b-roll, all free to use for coverage.</p>
 
-<h2>Games</h2>
+<h2 id="games">Games</h2>
 <div class="games">
 
   <article class="game">
@@ -69,7 +97,7 @@ footer{text-align:center;padding:26px;color:var(--muted);font-size:.85rem;border
     <img src="assets/faultfinder-920x430.png" alt="Faultfinder">
     <div class="body">
       <h3>Faultfinder</h3>
-      <p class="status"><b>Q4 2026</b> · Free demo on Steam and in the browser · Steam Next Fest, 19–26 Oct</p>
+      <p class="status"><b>Out 24 November 2026</b> · Free demo on Steam and in the browser · Steam Next Fest, 19–26 Oct</p>
       <p>A deduction game about debugging a program you can't run. The engineer who kept the city aloft is dead and her program is still running. Step through it, set breakpoints, and name the line that killed her.</p>
       <p class="links"><a href="faultfinder/">Press kit</a> <a href="https://store.steampowered.com/app/5120320/Faultfinder/">Steam</a> <a href="https://endpaperdev.itch.io/faultfinder">itch.io</a></p>
     </div>
@@ -113,7 +141,49 @@ footer{text-align:center;padding:26px;color:var(--muted);font-size:.85rem;border
 
 </div>
 
-<footer>© 2026 Endpaper · All assets on this site may be used for coverage of the games.</footer>
+<footer><div class="rules"></div>© 2026 Endpaper · All assets on this site may be used for coverage of the games.</footer>
 
+<script>
+/* Endpaper splash: procedural blued-steel marble with rust veins, from the studio splash screen. */
+function genMarble(canvas,w,h,scale,seed){
+  canvas.width=w;canvas.height=h;const ctx=canvas.getContext('2d');
+  const pal=[[42,52,78],[85,100,130],[52,62,92],[125,140,165],[32,40,62],[105,120,148],[60,72,98],[150,162,185],[38,46,70],[95,110,140],[70,82,108],[165,175,192],[28,34,55],[80,94,120]];
+  const img=ctx.createImageData(w,h);const d=img.data;
+  const rng=()=>{seed=(seed*16807)%2147483647;return seed/2147483647;};
+  const L=[];for(let i=0;i<6;i++)L.push({ox:rng()*500,oy:rng()*500,f:(.0008+rng()*.0015)*scale,a:(80+rng()*120)/scale,p:rng()*Math.PI*2});
+  const rs=[];for(let i=0;i<5;i++)rs.push({ox:rng()*400,oy:rng()*400,f:.001+rng()*.002,p:rng()*Math.PI*2,a:rng()*50+30});
+  for(let y=0;y<h;y++)for(let x=0;x<w;x++){
+    let dx=x,dy=y;for(const l of L){const nd=dx;dx+=Math.sin((dy-l.oy)*l.f+l.p)*l.a;dy+=Math.cos((nd-l.ox)*l.f*.7+l.p*1.5)*l.a*.8;}
+    let v=Math.sin(dx*.005)*.35+Math.sin(dy*.004+dx*.003)*.25+Math.cos(dx*.007-dy*.004)*.2+Math.sin((dx+dy)*.003)*.2;v=Math.max(0,Math.min(1,(v+1)/2));
+    const ci=Math.floor(v*(pal.length-1)),ci2=Math.min(ci+1,pal.length-1),t=v*(pal.length-1)-ci;
+    let r=pal[ci][0]+(pal[ci2][0]-pal[ci][0])*t,g=pal[ci][1]+(pal[ci2][1]-pal[ci][1])*t,b=pal[ci][2]+(pal[ci2][2]-pal[ci][2])*t;
+    if(Math.abs(Math.sin(dx*.012+dy*.008))<.04){r*=.65;g*=.65;b*=.65;}else if(Math.abs(Math.sin(dx*.009-dy*.013))<.035){r=Math.min(255,r*1.25);g=Math.min(255,g*1.25);b=Math.min(255,b*1.25);}
+    let md=999;for(const s of rs){const rdx=x+Math.sin((y-s.oy)*s.f*.5+s.p)*s.a,rdy=y+Math.cos((x-s.ox)*s.f*.3+s.p*1.3)*s.a*.4;const dist=Math.abs(Math.sin(rdx*s.f*1.8+rdy*s.f*1.2+s.p));if(dist<md)md=dist;}
+    if(md<.09){if(md<.025){const c=1-md/.025,cc=c*c;r=Math.min(255,220*cc+r*(1-cc));g=Math.min(255,115*cc+g*(1-cc));b=Math.min(255,35*cc+b*(1-cc));}else{const e=(1-(md-.025)/.065);const ed=e*e*.7;r=r*(1-ed)+185*ed;g=g*(1-ed)+95*ed;b=b*(1-ed)+40*ed;}}
+    const i=(y*w+x)*4;d[i]=r|0;d[i+1]=g|0;d[i+2]=b|0;d[i+3]=255;}
+  ctx.putImageData(img,0,0);return canvas.toDataURL('image/png');
+}
+const $=id=>document.getElementById(id);
+let timers=[],done=false;
+function finish(){if(done)return;done=true;['rule-top','rule-bottom','logo-row','letter-E','letter-R','tag','bg-marble','content'].forEach(id=>$(id).classList.add('on'));}
+function skipSplash(){timers.forEach(clearTimeout);timers=[];finish();}
+function playSplash(){
+  const seed=Math.floor(Math.random()*2147483646)+1;
+  const t1=document.createElement('canvas'),t2=document.createElement('canvas');
+  $('letter-E').style.backgroundImage='url('+genMarble(t1,200,200,.3,seed)+')';
+  $('letter-R').style.backgroundImage='url('+genMarble(t2,200,200,.3,seed+77777)+')';
+  genMarble($('bg-marble'),640,Math.round(640*window.innerHeight/window.innerWidth),.5,seed+9999);
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){finish();return;}
+  const at=(ms,fn)=>timers.push(setTimeout(fn,ms));
+  at(400,()=>{$('rule-top').classList.add('on');$('rule-bottom').classList.add('on');});
+  at(700,()=>$('logo-row').classList.add('on'));
+  at(1700,()=>$('letter-E').classList.add('on'));
+  at(2000,()=>$('letter-R').classList.add('on'));
+  at(2600,()=>{$('bg-marble').classList.add('on');$('tag').classList.add('on');});
+  at(3000,()=>$('content').classList.add('on'));
+  at(3400,finish);
+}
+document.fonts?document.fonts.ready.then(playSplash):playSplash();
+</script>
 </body>
 </html>
