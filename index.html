@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Endpaper</title>
+<meta name="description" content="Endpaper is a one-person game studio in Somerset, UK, making small, strange, finished games. Press kits for The Infinite Library, Faultfinder and FRANKED!.">
+<meta property="og:title" content="Endpaper">
+<meta property="og:description" content="Small, strange, finished games. One person, Somerset, UK.">
+<meta property="og:image" content="https://endpaperdev.github.io/assets/infinite-library-920x430.png">
+<link rel="icon" href="assets/endpaper-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0e0907;--ink2:#1a1410;--rule:#3a2f24;--gold:#dab96b;--parch:#e8d9b7;--body:#cfc4b2;--muted:#8f8373}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--ink);color:var(--body);font-family:'Source Sans 3',sans-serif;line-height:1.6}
+a{color:var(--gold)}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;color:var(--gold);font-weight:600}
+header{padding:64px 20px 36px;text-align:center;background:radial-gradient(ellipse at top,#241a12 0%,var(--ink) 65%)}
+header img{width:96px;height:96px;border:1px solid var(--rule)}
+header h1{font-size:3rem;letter-spacing:.28em;text-transform:uppercase;margin-top:18px;font-weight:500}
+header p.tag{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--parch);font-style:italic;margin-top:8px}
+.wrap{max-width:1040px;margin:0 auto;padding:12px 20px 80px}
+.intro{max-width:720px;margin:0 auto 44px;text-align:center;font-size:1.05rem}
+h2{font-size:1.6rem;border-bottom:1px solid var(--rule);padding-bottom:8px;margin:40px 0 18px}
+.games{display:grid;grid-template-columns:repeat(auto-fill,minmax(440px,1fr));gap:28px}
+@media(max-width:520px){.games{grid-template-columns:1fr}}
+.game{background:var(--ink2);border:1px solid var(--rule);border-radius:4px;overflow:hidden}
+.game img{width:100%;display:block;aspect-ratio:920/430;object-fit:cover}
+.game .body{padding:16px 18px 18px}
+.game h3{font-size:1.5rem;margin-bottom:4px}
+.game .status{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.game .status b{color:var(--gold);font-weight:600}
+.game p{margin-bottom:10px}
+.game .links a{margin-right:14px;font-weight:600}
+.game .links span{color:var(--muted)}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 22px;max-width:640px}
+dt{color:var(--parch);font-weight:600}
+footer{text-align:center;padding:26px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--rule)}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="assets/endpaper-mark.png" alt="Endpaper">
+  <h1>Endpaper</h1>
+  <p class="tag">Small, strange, finished games. One person, Somerset, UK.</p>
+</header>
+
+<div class="wrap">
+
+<p class="intro">Endpaper is a one-person studio making small games that are built to end. No live service, no microtransactions, nothing that needs you back every day. You play them, they end, you keep the shelf. Each game below has a press kit with trailers, screenshots, key art and b-roll, all free to use for coverage.</p>
+
+<h2>Games</h2>
+<div class="games">
+
+  <article class="game">
+    <img src="assets/infinite-library-920x430.png" alt="The Infinite Library">
+    <div class="body">
+      <h3>The Infinite Library</h3>
+      <p class="status"><b>Out 10 November 2026</b> · Free demo on Steam · Steam Next Fest, 19–26 Oct</p>
+      <p>An incremental game about a library that reads itself. Write words, fill shelves, and work out what the Library is actually doing while you tidy. Every prestige rewrites reality.</p>
+      <p class="links"><a href="the-infinite-library/">Press kit</a> <a href="https://store.steampowered.com/app/4693700/The_Infinite_Library/">Steam</a> <a href="https://endpaperdev.itch.io/the-infinite-library">itch.io</a></p>
+    </div>
+  </article>
+
+  <article class="game">
+    <img src="assets/faultfinder-920x430.png" alt="Faultfinder">
+    <div class="body">
+      <h3>Faultfinder</h3>
+      <p class="status"><b>Q4 2026</b> · Free demo on Steam and in the browser · Steam Next Fest, 19–26 Oct</p>
+      <p>A deduction game about debugging a program you can't run. The engineer who kept the city aloft is dead and her program is still running. Step through it, set breakpoints, and name the line that killed her.</p>
+      <p class="links"><a href="faultfinder/">Press kit</a> <a href="https://store.steampowered.com/app/5120320/Faultfinder/">Steam</a> <a href="https://endpaperdev.itch.io/faultfinder">itch.io</a></p>
+    </div>
+  </article>
+
+  <article class="game">
+    <img src="assets/franked-920x430.png" alt="FRANKED!">
+    <div class="body">
+      <h3>FRANKED!</h3>
+      <p class="status"><b>Q1 2027</b> · Free demo on Steam</p>
+      <p>A pinball roguelite about a night shift at a sorting office. Flip parcels into the right chute, or misroute them onto the Backlog Rail and weaponise your mistakes.</p>
+      <p class="links"><a href="https://store.steampowered.com/app/4857450/">Steam</a> <span>Press kit coming</span></p>
+    </div>
+  </article>
+
+  <article class="game">
+    <img src="assets/hundredth-word-920x430.png" alt="The Hundredth Word">
+    <div class="body">
+      <h3>The Hundredth Word</h3>
+      <p class="status"><b>In development</b></p>
+      <p>A murder mystery you solve one word at a time, and you only get a hundred of them.</p>
+      <p class="links"><span>Steam page and press kit to follow</span></p>
+    </div>
+  </article>
+
+</div>
+
+<h2>Press &amp; creators</h2>
+<dl>
+  <dt>Contact</dt><dd><a href="mailto:endpaperdev@gmail.com">endpaperdev@gmail.com</a></dd>
+  <dt>Keys</dt><dd>Review copies available on request ahead of each launch. Demos need no key.</dd>
+  <dt>Streaming</dt><dd>Coverage, streaming and monetised videos are welcome for all Endpaper games. No permission needed.</dd>
+  <dt>Steam</dt><dd><a href="https://store.steampowered.com/developer/endpaper">Developer page</a></dd>
+  <dt>itch.io</dt><dd><a href="https://endpaperdev.itch.io">endpaperdev.itch.io</a></dd>
+  <dt>YouTube</dt><dd><a href="https://www.youtube.com/channel/UCmXn2EtLsjeVSZBktGp1ZLg">@EndpaperDev</a></dd>
+  <dt>Reddit</dt><dd><a href="https://www.reddit.com/user/EndpaperDev">u/EndpaperDev</a></dd>
+</dl>
+
+<h2>About</h2>
+<p style="max-width:720px">Endpaper is one person, working from Somerset in the South West of England, building the kind of games I always wanted to find: ones that end, ones that mean something, ones where the systems are the story. Everything is built in Godot. Key art for The Infinite Library was painted by Komarca Art; some in-game artwork and music are made with generative AI tools, and each store page says so.</p>
+
+</div>
+
+<footer>© 2026 Endpaper · All assets on this site may be used for coverage of the games.</footer>
+
+</body>
+</html>
